@@ -1,0 +1,42 @@
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  position: relative;
+  height: 100%;
+  font-family: "fzpx", serif;
+}
+
+#canvas,
+#canvas canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.sm-content {
+  padding-top: 50px;
+}
+
+.sm-card {
+  width: 100%;
+  // background: rgba(255, 255, 255, .8);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sm-pointer-events-none {
+  pointer-events: none;
+}
+
+.sm-hidden {
+  visibility: hidden;
+}
