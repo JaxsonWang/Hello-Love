@@ -53,7 +53,7 @@
   import WiredButton from 'wired-button';
   import WiredSpinner from 'wired-spinner';
 
-  import SMConfig from '../../sm.config';
+  import SMConfig from '../../sm.config.dev';
 
   export default {
     name: "home",
@@ -80,6 +80,8 @@
         noticeItem: '这里是占位符',
 
         touchStartLoop: null,
+
+        typeSpeed: 200,
       }
     },
     computed: mapState([
@@ -160,7 +162,7 @@
         self.$nextTick(function () {
           self.typedObj = new Typed('#typed', {
             strings: [self.smContent[self.currentNum].content],
-            typeSpeed: 200,
+            typeSpeed: self.typeSpeed,
             loop: false,
             showCursor: false,
             onComplete: () => {
@@ -198,7 +200,7 @@
           // 打字机效果
           self.typedObj = new Typed('#typed', {
             strings: [self.smContent[self.currentNum].content],
-            typeSpeed: 200,
+            typeSpeed: self.typeSpeed,
             loop: false,
             showCursor: false,
             startDelay: 1000,
@@ -237,7 +239,7 @@
           // 打字机效果
           self.typedObj = new Typed('#typed', {
             strings: [self.smContent[self.currentNum].content],
-            typeSpeed: 200,
+            typeSpeed: self.typeSpeed,
             loop: false,
             showCursor: false,
             startDelay: 1000,
@@ -345,7 +347,8 @@
       padding-top: 50px;
 
       .sm-nav {
-        margin-top: 20px;
+        position: relative;
+        top: 100px;
 
         .sm-btn {
           &:first-child {
