@@ -81,7 +81,7 @@
 
         touchStartLoop: null,
 
-        typeSpeed: 200,
+        typeSpeed: process.env.NODE_ENV === 'production' ? 200 : 0,
       }
     },
     computed: mapState([
@@ -344,11 +344,11 @@
     }
 
     .sm-content {
-      padding-top: 50px;
+      padding-top: 20px;
 
       .sm-nav {
         position: relative;
-        top: 100px;
+        top: 80px;
 
         .sm-btn {
           &:first-child {
