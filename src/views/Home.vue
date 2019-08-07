@@ -81,7 +81,7 @@
 
         touchStartLoop: null,
 
-        typeSpeed: process.env.NODE_ENV === 'production' ? 200 : 0,
+        typeSpeed: process.env.NODE_ENV === 'development' ? 0 : SMConfig.typeSpeed,
       }
     },
     computed: mapState([
@@ -270,20 +270,21 @@
     },
     created() {
       const self = this;
-      if (typeof fetch === "function") {
-        fetch(`https://api.imjad.cn/cloudmusic/?type=song&id=${SMConfig.BGMId}&br=128000`)
-          .then(function (response) {
-            return response.json();
-          }).then(function (myJson) {
-          if (myJson.code === 200) {
-            self.bgmJSON = myJson.data[0];
-          } else {
-            alert('数据获取失败，请稍后再重试！')
-          }
-        });
-      } else {
-        alert('您所用的浏览器不支持数据获取函数，请更换现代浏览器！')
-      }
+      // if (typeof fetch === "function") {
+      //   fetch(`https://api.imjad.cn/cloudmusic/?type=song&id=${SMConfig.BGMId}&br=128000`)
+      //     .then(function (response) {
+      //       return response.json();
+      //     }).then(function (myJson) {
+      //     if (myJson.code === 200) {
+      //       self.bgmJSON = myJson.data[0];
+      //     } else {
+      //       alert('数据获取失败，请稍后再重试！')
+      //     }
+      //   });
+      // } else {
+      //   alert('您所用的浏览器不支持数据获取函数，请更换现代浏览器！')
+      // }
+      self.bgmJSON = SMConfig.bgmJSON;
     },
     mounted() {
       const self = this;

@@ -10,8 +10,7 @@
 
 请打开项目目录下`sm.config.js`修改相关字段
 
-- `BGMId` 网易云音乐ID，例如：`https://music.163.com/#/song?id=538610028`，只需要填入`538610028`即可。
-- `smContent` 信封内容，分为`title`（标题）和`content`（内容）字段。
+如果修改项目多级目录请打开 `vue.config.js` 文件中的 `PublicPath` 字段
 
 修改完毕后需要重新编译项目生成静态页面放入服务器即可。
 

@@ -2,12 +2,14 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
+const PublicPath = '/'; // 项目目录，顶级目录默认为 `/`， 如果部署项目路径为多级项目则需要设置项目路径，例如本站实例 `https://i95.me/hello-sm`，那么这里设置为 `/hello-sm/`
+
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
 module.exports = {
-  publicPath: '/',
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : PublicPath,
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
 
