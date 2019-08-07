@@ -3,7 +3,7 @@ export default {
   bgmJSON: {
     url: './assets/Richard Sanderson - Reality.mp3',
     type: 'mp3'
-  }, // 正文背景音乐 资源在项目目录 `/pubilc/assets/xxxx.mp3`，命名无所谓，注意 `type` 和文件格式一样。
+  }, // 正文背景音乐，当然也支持网络地址资源，如果是本地资源在项目目录 `/pubilc/assets/xxxx.mp3`，命名无所谓，注意 `type` 和文件格式一样。
   smContent: [
     {
       title: '标题1',
