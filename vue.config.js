@@ -1,59 +1,37 @@
-const path = require('path');
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
+'use strict'
+const path = require('path')
 
-const PublicPath = '/'; // 项目目录，顶级目录默认为 `/`， 如果部署项目路径为多级项目则需要设置项目路径，例如本站实例 `https://i95.me/hello-sm`，那么这里设置为 `/hello-sm/`
-
-function resolve(dir) {
+function resolve (dir) {
   return path.join(__dirname, dir)
 }
 
+const name = '致 Souler 一封信'
+
+const port = process.env.port || process.env.npm_config_port || 4489
+
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'development' ? '/' : PublicPath,
+  publicPath: '/',
+  outputDir: 'dist',
+  assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
-
+  devServer: {
+    port: port,
+    open: true,
+    overlay: {
+      warnings: false,
+      errors: true
+    }
+  },
   configureWebpack: {
-    // provide the app's title in webpack's name field, so that
-    // it can be accessed in index.html to inject the correct title.
-    name: '来自 Souler 一封信',
+    name: name,
     resolve: {
       alias: {
-        '@': resolve('src'),
+        '@': resolve('src')
       }
     },
-    plugins: [
-      new webpack.ProvidePlugin({
-        rough: "rough",
-        "window.rough": "rough",
-        Typed: "Typed",
-        "window.Typed": "Typed"
-        // jQuery: "jquery",
-        // "window.jQuery": "jquery",
-      })
-    ]
-  },
-  chainWebpack: config => {
-    config.externals({
-      'rough': 'rough',
-      'Typed': 'Typed',
-    })
-  },
-  css: {
-    loaderOptions: {
-      postcss: {
-        plugins: [
-          autoprefixer(),
-        ]
-      }
-    }
-  },
-  pluginOptions: {
-    'style-resources-loader': {
-      preProcessor: 'scss',
-      patterns: [
-        resolve('src/styles/sm.scss'),
-      ]
-    }
+    // externals: {
+    //   'rough': 'rough'
+    // }
   }
-};
+}
