@@ -1,5 +1,6 @@
 <template>
   <div ref="rough-canvas" class="home">
+    测试背景
   </div>
 </template>
 
@@ -8,10 +9,9 @@ import { initCanvas } from '@/utils/canvas'
 
 export default {
   name: 'Home',
-  components: {
-  },
+  components: {},
   mounted() {
-  	initCanvas(this.$refs['rough-canvas'])
+    initCanvas(this.$refs['rough-canvas'])
   }
 }
 </script>
