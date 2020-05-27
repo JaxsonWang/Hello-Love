@@ -67,6 +67,7 @@ export const initCanvas = (element) => {
     } = scope
     canvas.width = element.offsetWidth
     canvas.height = element.offsetHeight
+    canvas.className = 'rough-canvas'
     element.appendChild(canvas)
     let particleCount = 60 // 数量
     while (particleCount--) {
@@ -109,11 +110,15 @@ export const loveCanvas = (element) => {
  * @param element Canvas对象
  */
 export const mailCanvas = (element) => {
-  rough.canvas(element).rectangle(0, 30, element.clientWidth / 1.01, element.clientHeight / 1.25,
+  rough.canvas(element).rectangle(
+    0,
+    0,
+    element.clientWidth / 1.25,
+    element.clientHeight / 1.25,
     {
       roughness: 3,
       fill: 'rgba(255, 0, 0, 0.5)',
-      // stroke: 'red',
+      stroke: 'red',
       hachureAngle: 30, // angle of hachure,
       hachureGap: 5,
       fillWeight: 1.5

@@ -8453,6 +8453,11 @@ vue-loader@^15.9.1:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-router@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.3.0.tgz#752905ef1ce210626834f6fa44e6fdcb11e4f262"
+  integrity sha1-dSkF7xziEGJoNPb6ROb9yxHk8mI=
+
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"
   resolved "https://registry.npm.taobao.org/vue-style-loader/download/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
