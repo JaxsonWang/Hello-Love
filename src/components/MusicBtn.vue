@@ -14,15 +14,11 @@
 </template>
 
 <script>
-import WiredButton from 'wired-button'
 import { store } from '@/store'
 import musicFile from '../assets/Richard Sanderson - Reality.mp3'
 
 export default {
   name: 'MusicBtn',
-  components: {
-    WiredButton
-  },
   data() {
     return {
       elevation: store.elevation,

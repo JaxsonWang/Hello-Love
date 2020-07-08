@@ -1,25 +1,37 @@
 <template>
   <div class="open-mail">
-    <div class="open-content" @click="openAction">
+    <div v-if="open" class="open-content" @click="openAction">
       <h3 class="title">致 Souler 一封信</h3>
       <p class="desc">轻启</p>
       <canvas ref="mail" class="canvas-mail" />
     </div>
+    <card v-else />
   </div>
 </template>
 
 <script>
+import Card from '@/components/Card'
 import { mailCanvas } from '@/utils/canvas'
 
 export default {
   name: 'Home',
-  components: {},
+  components: {
+    Card
+  },
+  data() {
+    return {
+      open: true
+    }
+  },
   mounted() {
-    mailCanvas(this.$refs.mail)
+    if (this.$refs.mail) mailCanvas(this.$refs.mail)
   },
   methods: {
+    /**
+     * 打开信封
+     */
     openAction() {
-      console.log('打开信封')
+      this.open = false
     }
   }
 }

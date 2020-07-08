@@ -2,3 +2,4 @@ src/assets
 src/data/*.js
 public
 dist
+.env.production

@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import MusicBtn from '@/components/musicBtn'
+import MusicBtn from '@/components/MusicBtn'
 import { initCanvas } from '@/utils/canvas'
 
 export default {
