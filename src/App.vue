@@ -4,15 +4,18 @@
       <music-btn class="music-btn" />
       <router-view />
     </div>
+    <loading />
   </div>
 </template>
 <script>
 import MusicBtn from '@/components/MusicBtn'
+import Loading from '@/components/Loading'
 import { initCanvas } from '@/utils/canvas'
 
 export default {
   components: {
-    MusicBtn
+    MusicBtn,
+    Loading
   },
   mounted() {
     initCanvas(this.$refs['app-container'])

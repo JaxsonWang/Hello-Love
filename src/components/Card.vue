@@ -7,7 +7,12 @@
       class="card-item"
     >
       <wired-card elevation="5">
-        {{ item }}
+        <vue-typed-js
+          :strings="[item]"
+          :show-cursor="false"
+        >
+          <p class="typing" />
+        </vue-typed-js>
       </wired-card>
     </div>
     <div class="card-pagination">
@@ -34,10 +39,16 @@
 </template>
 
 <script>
+import WiredButton from 'wired-button'
+import WiredCard from 'wired-card'
 import wrapTextNumber from '@/utils/text'
 
 export default {
   name: 'Card',
+  components: {
+    WiredButton,
+    WiredCard
+  },
   data() {
     return {
       currentPage: 0,
@@ -49,7 +60,7 @@ export default {
   },
   methods: {
     initContent() {
-      this.content = wrapTextNumber(process.env.VUE_APP_CONTENT, 250)
+      this.content = wrapTextNumber(process.env.VUE_APP_CONTENT, 253)
     },
     /**
      * 下一页
@@ -74,12 +85,18 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   .card-item {
     width: 90%;
     font-size: 2rem;
     line-height: 2.5rem;
     background-color: rgba(255, 255, 255, 0.8);
+
+    .wired-rendered,
+    .typed-element {
+      height: 60vh;
+      display: flex;
+      align-items: flex-start;
+    }
   }
 
   .card-pagination {

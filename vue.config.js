@@ -10,7 +10,7 @@ const name = '致 Souler 一封信'
 const port = process.env.port || process.env.npm_config_port || 4489
 
 module.exports = {
-  publicPath: '/',
+  publicPath: './',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',

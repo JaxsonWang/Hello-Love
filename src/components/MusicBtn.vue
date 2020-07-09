@@ -6,7 +6,7 @@
     >
       {{ musicStatus ? '关闭音乐' : '开启音乐' }}
     </wired-button>
-    <audio ref="music-audio" loop autoplay muted>
+    <audio ref="music-audio" loop autoplay>
       <source :src="audio" type="audio/mp3">
       Your browser does not support the <code>audio</code> element.
     </audio>
@@ -14,11 +14,15 @@
 </template>
 
 <script>
+import WiredButton from 'wired-button'
 import { store } from '@/store'
 import musicFile from '../assets/Richard Sanderson - Reality.mp3'
 
 export default {
   name: 'MusicBtn',
+  components: {
+    WiredButton
+  },
   data() {
     return {
       elevation: store.elevation,
@@ -27,7 +31,9 @@ export default {
     }
   },
   mounted() {
-    this.musicChange()
+    setTimeout(() => {
+      this.musicChange()
+    }, 1000)
   },
   methods: {
     /**
