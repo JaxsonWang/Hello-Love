@@ -16,7 +16,6 @@
 <script>
 import WiredButton from 'wired-button'
 import { store } from '@/store'
-import musicFile from '../assets/Richard Sanderson - Reality.mp3'
 
 export default {
   name: 'MusicBtn',
@@ -27,13 +26,11 @@ export default {
     return {
       elevation: store.elevation,
       musicStatus: false,
-      audio: musicFile
+      audio: 'https://cdn.jsdelivr.net/gh/JaxsonWang/jaxsonwang.github.io@master/assets/Richard%20Sanderson%20-%20Reality.mp3'
     }
   },
   mounted() {
-    setTimeout(() => {
-      this.musicChange()
-    }, 1000)
+    this.musicChange()
   },
   methods: {
     /**
@@ -53,7 +50,7 @@ export default {
 <style lang="scss">
 .music-btn {
   position: absolute;
-  top: 5rem;
+  top: 2rem;
   right: 5rem;
 }
 </style>
