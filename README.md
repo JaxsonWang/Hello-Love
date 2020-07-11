@@ -6,8 +6,6 @@
 
 ---
 
-正在重构中...
-
 ## Project setup
 ```
 yarn install
