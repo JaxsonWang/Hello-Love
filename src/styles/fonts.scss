@@ -1,12 +1,12 @@
 @font-face {
   font-family: "fzpx";
-  src: url("https://cdn.jsdelivr.net/gh/JaxsonWang/jaxsonwang.github.io@master/assets/fzpx/fzpx.eot"); /* IE9 */
-  src: url("https://cdn.jsdelivr.net/gh/JaxsonWang/jaxsonwang.github.io@master/assets/fzpx/fzpx.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  src: url("~@/assets/fzpx/fzpx.eot"); /* IE9 */
+  src: url("~@/assets/fzpx/fzpx.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
 
-  url("https://cdn.jsdelivr.net/gh/JaxsonWang/jaxsonwang.github.io@master/assets/fzpx/fzpx.woff") format("woff"), /* chrome、firefox */
-  url("https://cdn.jsdelivr.net/gh/JaxsonWang/jaxsonwang.github.io@master/assets/fzpx/fzpx.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+  url("~@/assets/fzpx/fzpx.woff") format("woff"), /* chrome、firefox */
+  url("~@/assets/fzpx/fzpx.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
 
-  url("https://cdn.jsdelivr.net/gh/JaxsonWang/jaxsonwang.github.io@master/assets/fzpx/fzpx.svg#fzpx") format("svg"); /* iOS 4.1- */
+  url("~@/assets/fzpx/fzpx.svg#fzpx") format("svg"); /* iOS 4.1- */
   font-style: normal;
   font-weight: normal;
 }
